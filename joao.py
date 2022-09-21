@@ -5,7 +5,7 @@ import time
 import random
 
 escolha = 'Atendente'
-atendente = ['Xuxa', 'Shakira', 'Faustão', 'Ana Maria Braga', ]
+atendente = ['Xuxa', 'Shakira', 'Faustão', 'Ana Maria Braga']
 
 if escolha == 'Atendente':
     for x in range(10, 0, -1):
