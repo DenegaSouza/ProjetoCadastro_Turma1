@@ -19,5 +19,17 @@ atualizadas pelo programa.
 1 - No caso de ser anônimo, o usuário vai direto pra parte de reclamar (já que não tem dado pra ser verificado ou coisa do tipo)"""
 
 
-id = str(input("Gostaria de se identificar?\nSe sim, favor informar seu nome: "))
-print(id)
+id = str(input("Olá!?\nPor favor, digite SIM para se identificar ou NÃO para continuar: "))
+nome = ""
+cpf = 0
+idade = 0
+
+
+if id == "sim":
+    print("Obrigado pelo contato, para darmos seguimento tenha em mãos os seguintes dados: Nome completo, número de CPF e telefone")
+    nome = str(print(input("Agora, por favor informe seu nome: ")))
+    cpf = print(input(f"Obrigado, {nome}! Agora precisamos de seu CPF. Digite apenas os números, sem pontuação."))
+    tel = int(print(input("Excelente! Por último, favor digitar seu telefone para contato com DDD: ")))
+
+else:
+    print("Ok, vamos continuar conversando sem identificação.")
