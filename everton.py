@@ -1,3 +1,5 @@
+import os, time
+
 """
 O intuito é fazer um chatbot de suporte técnico.
 
@@ -19,17 +21,19 @@ atualizadas pelo programa.
 1 - No caso de ser anônimo, o usuário vai direto pra parte de reclamar (já que não tem dado pra ser verificado ou coisa do tipo)"""
 
 
-id = str(input("Olá!?\nPor favor, digite SIM para se identificar ou NÃO para continuar: "))
-nome = ""
-cpf = 0
-idade = 0
+# MENSAGEM DE INÍCIO DO BOT E CONFIRMACAO DE IDENTIFICACAO
+id = str(input("BEM-VINDO(A) AO CHATBOT!\nPor favor, digite SIM para se identificar ou NÃO para continuar: "))
 
 
+# SOLICITACAO DE DADOS DO USUARIO.
 if id == "sim":
-    print("Obrigado pelo contato, para darmos seguimento tenha em mãos os seguintes dados: Nome completo, número de CPF e telefone")
-    nome = str(print(input("Agora, por favor informe seu nome: ")))
-    cpf = print(input(f"Obrigado, {nome}! Agora precisamos de seu CPF. Digite apenas os números, sem pontuação."))
-    tel = int(print(input("Excelente! Por último, favor digitar seu telefone para contato com DDD: ")))
+    print("\nPara darmos seguimento tenha em mãos os seguintes dados: Nome completo, número de CPF e telefone")
+    nome = str(input("Agora, por favor informe seu nome: "))
+    cpf = input(f"Obrigado, {nome}! Agora precisamos de seu CPF. Digite apenas os números, sem pontuação: ")
+
+    #### INCLUIR VERIFICAÇÃO DE VALIDADE DO CPF ####
+    tel = int(input("Excelente, seu CPF é válido! Por último, favor digitar seu telefone para contato com DDD: "))
 
 else:
     print("Ok, vamos continuar conversando sem identificação.")
+    ### INCLUIR CADASTRO DA RECLAMACAO AQUI.
