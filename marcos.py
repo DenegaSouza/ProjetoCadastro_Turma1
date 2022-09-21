@@ -26,8 +26,8 @@ while True :
 
     else:
         listaCPF = list(cpf)    #CPF AINDA É UMA str FOI FATIADO NA LISTA
-        # PRIMEIRO DIGITO
 
+        # PRIMEIRO DIGITO
         for c in range(0, len(listaCPF)):
             listaInt.append(int(listaCPF[c]))       # CPF NA LISTA INT
 
@@ -37,11 +37,11 @@ while True :
             de números de 10 à 2 e soma os resultados
             """
             rLista.append(listaInt[posicao]*c)   # c=10,9,8,7...  posicao=0,1,2,3,4...
-            posicao += 1        # O RESULTADO ESTÁ SEDO ADICIONADO EM OUTRA LISTA COMO int E NÃO MAIS str
-                                # EU NÃO CONSEGUI FAZER ISSO DE OUTRO JEITO
+            posicao += 1        # O RESULTADO ESTÁ SEDO ADICIONADO EM OUTRA LISTA COMO int
+                                # EU NÃO CONSEGUI FAZER ISSO SEM USAR DUAS LISTAS
 
         # O próximo passo: multiplicar a soma dos resultado por 10. dividir por 11 e pegar apenas o resto da divisão
-        # Caso resto da divisão = 10, considerar = 0 *****
+        # Caso resto da divisão = 10, considerar = 0
         # Se o resultado for igual ao primeiro digito do cpf (posição 9) , primeira parte da validação OK
 
         resultado = (sum(rLista)*10 ) % 11
@@ -51,8 +51,9 @@ while True :
         #print(resultado)   Teste para ver se o resultado é igual ao penultimo digito
 
         if resultado == listaInt[-2] and len(set(listaInt)) > 1:     # IRÁ PROCEGUIR CASO PASSE A PRIMEIRA VALIDAÇÃO
-            # SEGUNDO DIGITO                                         SET() REMOVE OS ITENS DUPLICADOS
-            # VARIÁVEIS                                              CASO O USUÁRIO DIGITE 11111111111
+                                                                     # SET() REMOVE OS ITENS DUPLICADOS
+            # SEGUNDO DIGITO                                         # CASO O USUÁRIO DIGITE 11111111111
+            # VARIÁVEIS
             decrescente = 10
             posicao = 0
             rLista.clear()      # LIMPA rLista
@@ -67,8 +68,8 @@ while True :
                                     # EU NÃO CONSEGUI FAZER ISSO DE OUTRO JEITO
 
             # O próximo passo: multiplicar a soma dos resultado por 10. dividir por 11 e pegar apenas o resto da divisão
-            # Caso resto da divisão = 10, considerar = 0 *****
-            # Se o resultado for igual ao primeiro digito do cpf (posição 9) , primeira parte da validação OK
+            # Caso resto da divisão = 10, considerar = 0
+            # Se o resultado for igual ao primeiro digito do cpf (posição 10) , primeira parte da validação OK
 
             resultado = (sum(rLista)*10 ) % 11
             if resultado == 10:
