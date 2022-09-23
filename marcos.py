@@ -95,7 +95,7 @@ while True :
 
         resultado = (sum(rLista)*10 ) % 11
         if resultado == 10:
-            resultado = 0
+            resultado = 0 if
 
         #print(resultado)   Teste para ver se o resultado é igual ao penultimo digito
 
