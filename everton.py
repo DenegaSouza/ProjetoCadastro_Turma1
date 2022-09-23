@@ -1,7 +1,7 @@
 import os, time
 
 """
-O intuito é fazer um chatbot de suporte técnico.
+O intuito é fazer um chatbot de suporte técnico.          
 
 1- Primeiramente terá um menu questionando ao usuário se ele quer se identificar ou não (reclamar de forma anônima)
 - Se ele escolher se identificar, o usuário deve informar seu nome, CPF e telefone.
