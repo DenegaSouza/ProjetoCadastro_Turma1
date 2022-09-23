@@ -5,10 +5,50 @@
 """
 
 
+# VALIDADOR TELEFONE
+
+dadosCadastro = [{'nome': 'Marcos Silveira', 'cpf': '78946667945'}] # serão salvos em uma lista, cada usuário terá um dicionário dentro da lista
+listaTemp = list()               # lista temporária para conversão de STR > INT
+
+while True:
+    listaTemp.clear()       # sempre irá limpar a lista temporária antes de cadastrar outro usuário
+    telefone = str(input('telefone: ')).strip()                   # recebe os dados (telefone) como STR
+    telefone = telefone.replace('.', '')                          # REMOÇÃO DE '.' , ' ' E '-' caso o usuário use
+    telefone = telefone.replace('-', '')
+    telefone = telefone.replace(' ', '')
+
+    if len(telefone) != 11 or not telefone.isdecimal():     # se telefone for diferente de 11 e se não for decimal
+        print('Digite um número válido!\n')   #Se digitar a quantidade de números errada correto: 47 98888-7777
+
+    else:
+        listaTemp = list(telefone)          # Adiciona o telefone a uma lista ex: [3, 5, 6, 5]
+        listaTemp.insert(2, ' ')            # Insere o espaço apos o "DDD"
+        listaTemp.insert(8, '-')            # Insere o "-" no meio do número
+        telefone = ''.join(listaTemp)       # Junta a lista novamente e passa ela para a variável
+        print(telefone)         # print p teste
+
+        # ADICINANDO O NÚMERO PARA O DICIONÁRIO
+        dadosCadastro[0]['telefone'] = telefone         # O cadastro estará dentro de um loop
+        break                                           # O "0" será o "c" do loop
+                                                        # Quando cadastrar outro usuário, o "c" altera sozinho
+                                                        # e não precisa se preocupar com a posição da lista
+
+print(dadosCadastro)    # print p teste
+
+# FIM VALIDADOR DE TELEFONE
+
+
+
+
+
+# VALIDADOR DE CPF
+
 # LISTAS
 rLista = list()             # Respostas dos cálculos
 listaCPF = list()           # Lista do CPF fracionado em str
 listaInt = list()           # LIsta do CPF fracionado em int
+
+# CPF deve ser salvo como STR porque caso inicie com '0' irá dar erro ao salvar no dicionário
 
 while True :
     # VARIÁVEIS
@@ -21,7 +61,7 @@ while True :
     cpf = cpf.replace('.', '')              # REMOÇÃO DE '.' E '-'
     cpf = cpf.replace('-', '')
 
-    if len(cpf) != 11:
+    if len(cpf) != 11 or not cpf.isdecimal():   # se CPF for diferente de 11 e se não for decimal
         print('Digite o CPF corretamente!\n')   #Se digitar a quantidade de números errada
 
     else:
@@ -83,4 +123,5 @@ while True :
         else:
             print('CPF inválido!')
 print('fim')
+# FIM VALIDADOR CPF
 
