@@ -41,6 +41,8 @@ print(dadosCadastro)    # print p teste
 
 
 
+
+
 # VALIDADOR DE CPF
 
 # LISTAS
@@ -68,8 +70,15 @@ while True :
         listaCPF = list(cpf)    #CPF AINDA É UMA str FOI FATIADO NA LISTA
 
         # PRIMEIRO DIGITO
+
+        # PADRÃO
+        """
         for c in range(0, len(listaCPF)):
             listaInt.append(int(listaCPF[c]))       # CPF NA LISTA INT
+        """
+        # FIM PADRÃO
+
+        [listaInt.append(int(digito)) for digito in listaCPF]     # LIST COMPREHENSION
 
         for c in range(10, 1, -1):
             """
