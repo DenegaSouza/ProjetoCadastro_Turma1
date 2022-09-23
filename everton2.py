@@ -1,4 +1,4 @@
-import os, time
+
 
 """
 O intuito é fazer um chatbot de suporte técnico.          
